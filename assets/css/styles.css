@@ -797,3 +797,516 @@ p {
     background: linear-gradient(to top, #30cfd0 20%, #330867 80%);
     box-shadow: 0 2px 6px rgba(48, 207, 208, 0.5);
 }
+
+/* Performance Stats */
+.performance-stats {
+    padding: 1rem 0;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Pie Chart Container */
+.pie-chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 1rem 0;
+}
+
+/* Results Summary Enhanced */
+.results-summary {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+    background: var(--gradient-main);
+    color: var(--text-primary);
+    box-shadow: 0 8px 32px rgba(48, 207, 208, 0.3);
+    animation: scorePulse 2s ease-in-out infinite;
+}
+
+@keyframes scorePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.score-excellent {
+    background: linear-gradient(135deg, #3EF8B7 0%, #2dd4a8 100%);
+    box-shadow: 0 8px 32px rgba(62, 248, 183, 0.4);
+}
+
+.score-good {
+    background: linear-gradient(135deg, #6C5CE7 0%, #5a4fd8 100%);
+    box-shadow: 0 8px 32px rgba(108, 92, 231, 0.4);
+}
+
+.score-average {
+    background: linear-gradient(135deg, #FFD86F 0%, #e6c25a 100%);
+    box-shadow: 0 8px 32px rgba(255, 216, 111, 0.4);
+}
+
+.score-poor {
+    background: linear-gradient(135deg, #FF3366 0%, #e62e5c 100%);
+    box-shadow: 0 8px 32px rgba(255, 51, 102, 0.4);
+}
+
+/* Chart Styling */
+canvas {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+}
+
+/* Enhanced Question Review */
+.question-review {
+    margin-top: 2rem;
+}
+
+.accordion-button {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.2) 0%, rgba(108, 92, 231, 0.2) 100%);
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px rgba(48, 207, 208, 0.2);
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(48, 207, 208, 0.25);
+    border-color: var(--primary-color);
+}
+
+.accordion-body {
+    background: rgba(27, 21, 57, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+}
+
+/* Leaderboard Enhanced */
+.leaderboard-item {
+    background: linear-gradient(135deg, rgba(27, 21, 57, 0.8) 0%, rgba(48, 207, 208, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.leaderboard-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(48, 207, 208, 0.2);
+    border-color: var(--primary-color);
+}
+
+/* Enhanced Leaderboard Charts */
+.leaderboard-chart-container {
+    position: relative;
+    height: 300px;
+    margin: 1rem 0;
+}
+
+.leaderboard-chart-container canvas {
+    max-height: 300px !important;
+}
+
+/* Leaderboard Cards */
+.leaderboard-card {
+    background: linear-gradient(135deg, rgba(27, 21, 57, 0.8) 0%, rgba(48, 207, 208, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.leaderboard-card .card-header {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px 15px 0 0;
+}
+
+.leaderboard-card .card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.leaderboard-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Responsive Chart Sizing */
+@media (max-width: 768px) {
+    .leaderboard-chart-container {
+        height: 250px;
+    }
+    
+    .leaderboard-chart-container canvas {
+        max-height: 250px !important;
+    }
+    
+    .leaderboard-card .card-body {
+        padding: 1rem;
+    }
+}
+
+/* User Menu Styling */
+#user-menu .dropdown-toggle {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.2) 0%, rgba(108, 92, 231, 0.2) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+#user-menu .dropdown-toggle:hover {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.3) 0%, rgba(108, 92, 231, 0.3) 100%);
+    border-color: var(--primary-color);
+}
+
+#user-menu .dropdown-menu {
+    background: rgba(27, 21, 57, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+#user-menu .dropdown-item {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+#user-menu .dropdown-item:hover {
+    background: rgba(48, 207, 208, 0.1);
+    color: var(--text-primary);
+}
+
+/* Empty Leaderboard State */
+.empty-leaderboard {
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    border-radius: 15px;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.empty-leaderboard i {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.empty-leaderboard h4 {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.empty-leaderboard p {
+    color: var(--text-secondary);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.empty-leaderboard .btn {
+    background: var(--gradient-main);
+    border: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.empty-leaderboard .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(48, 207, 208, 0.3);
+}
+
+/* Error State */
+.error-state {
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, rgba(255, 51, 102, 0.1) 0%, rgba(255, 51, 102, 0.05) 100%);
+    border-radius: 15px;
+    border: 2px dashed rgba(255, 51, 102, 0.3);
+}
+
+.error-state i {
+    color: var(--danger-color);
+    opacity: 0.8;
+}
+
+.error-state h4 {
+    color: var(--danger-color);
+    margin-bottom: 1rem;
+}
+
+.error-state p {
+    color: var(--text-secondary);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.error-state .btn {
+    background: var(--danger-color);
+    border: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.error-state .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 51, 102, 0.3);
+    background: #e62e5c;
+}
+
+/* Results Modal Chart Fixes */
+#resultsModal .card canvas {
+    max-height: 300px !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+#resultsModal .card {
+    background: linear-gradient(135deg, rgba(27, 21, 57, 0.8) 0%, rgba(48, 207, 208, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+#resultsModal .card-body {
+    padding: 1.5rem;
+    position: relative;
+}
+
+#resultsModal .card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Chart Animation Fixes */
+#resultsPieChart,
+#leaderboardPieChart,
+#leaderboardBarChart {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Modal and Chart Fixes */
+#resultsModal {
+    z-index: 1055;
+}
+
+#resultsModal .modal-dialog {
+    max-width: 800px;
+    margin: 1.75rem auto;
+}
+
+#resultsModal .modal-content {
+    background: linear-gradient(135deg, rgba(14, 10, 36, 0.95) 0%, rgba(27, 21, 57, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+#resultsModal .modal-header {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px 15px 0 0;
+}
+
+#resultsModal .modal-body {
+    padding: 2rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#resultsModal .modal-footer {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0 0 15px 15px;
+}
+
+/* Chart Container Fixes */
+#resultsModal .card {
+    background: linear-gradient(135deg, rgba(27, 21, 57, 0.8) 0%, rgba(48, 207, 208, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 1rem;
+}
+
+#resultsModal .card-body {
+    padding: 1.5rem;
+    position: relative;
+    min-height: 300px;
+}
+
+#resultsModal .card-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Chart Canvas Fixes */
+#resultsModal canvas {
+    max-height: 300px !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Ensure charts don't fall or move unexpectedly */
+#resultsPieChart,
+#leaderboardPieChart,
+#leaderboardBarChart {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+}
+
+/* My Results Modal Styling */
+#myResultsModal .modal-dialog {
+    width: 95%;
+    max-width: 900px;
+    margin: 1.75rem auto;
+}
+
+#myResultsModal .modal-content {
+    background: linear-gradient(135deg, rgba(14, 10, 36, 0.95) 0%, rgba(27, 21, 57, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+#myResultsModal .modal-header,
+#myResultsModal .modal-footer {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+#myResultsModal .modal-body {
+    padding: 1.5rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#myResultsModal .card {
+    background: linear-gradient(135deg, rgba(27, 21, 57, 0.8) 0%, rgba(48, 207, 208, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+#myResultsModal canvas {
+    width: 100% !important;
+    max-height: 220px !important;
+    height: 220px !important;
+    display: block !important;
+}
+
+@media (max-width: 576px) {
+    #myResultsModal .modal-dialog {
+        width: 100%;
+        margin: 0.5rem;
+    }
+    #myResultsModal .modal-body {
+        padding: 1rem;
+    }
+    #myResultsModal canvas {
+        max-height: 180px !important;
+        height: 180px !important;
+    }
+}
+
+/* Profile Section */
+#profile .card {
+    background: linear-gradient(135deg, rgba(27, 21, 57, 0.8) 0%, rgba(48, 207, 208, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+#profile .card-header {
+    background: linear-gradient(135deg, rgba(48, 207, 208, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#profile .card-body { padding: 1.5rem; }
+#profile input.form-control { background: rgba(255,255,255,0.05); color: var(--text-primary); }
+#profile .form-text { color: var(--text-secondary); }
+
+@media (max-width: 576px) {
+    #profile .card-body { padding: 1rem; }
+}
+
+/* AI Generator visibility improvements */
+#ai-generator .generator-card .card-body { color: #FFFFFF; }
+#ai-generator .form-label { color: #FFFFFF; }
+#ai-generator .form-text { color: #B0B3C7; }
+#ai-generator input.form-control,
+#ai-generator select.form-select {
+  color: #FFFFFF;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+#ai-generator input.form-control::placeholder { color: #B0B3C7; }
+#ai-generator .form-select option { color: #FFFFFF; background-color: #1B1539; }
+#ai-generator .form-select:focus,
+#ai-generator input.form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(108, 92, 231, 0.35);
+  border-color: #6C5CE7;
+}
+#ai-generator .form-check-label { color: #FFFFFF; }
+#ai-generator .btn-submit { color: #FFFFFF; }

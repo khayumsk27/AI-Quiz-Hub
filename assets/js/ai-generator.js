@@ -104,6 +104,42 @@ class AIQuizGenerator {
     }
 
     generateMockQuiz(formData) {
+        const normalizedTypes = formData.questionTypes.map(t => t.toLowerCase().trim());
+
+        // Build a dynamic True/False pool to avoid repetition
+        const buildTrueFalsePool = (topic) => {
+            const items = [
+                { q: `${topic} is an important topic in modern technology.`, a: 0 },
+                { q: `${topic} always requires labeled data.`, a: 1 },
+                { q: `Best practices in ${topic} include testing and validation.`, a: 0 },
+                { q: `${topic} eliminates the need for design.`, a: 1 },
+                { q: `${topic} can be applied across multiple domains.`, a: 0 },
+                { q: `${topic} guarantees 100% accuracy.`, a: 1 },
+                { q: `Monitoring is unnecessary in ${topic}.`, a: 1 },
+                { q: `Optimization is relevant to ${topic}.`, a: 0 },
+                { q: `${topic} and documentation are unrelated.`, a: 1 },
+                { q: `Security should be considered when using ${topic}.`, a: 0 },
+                { q: `${topic} is purely theoretical with no real-world use.`, a: 1 },
+                { q: `${topic} solutions should be evaluated using metrics.`, a: 0 },
+                { q: `${topic} must run in the cloud to be valid.`, a: 1 },
+                { q: `${topic} is only useful for small problems.`, a: 1 },
+                { q: `Automation in ${topic} can reduce human error.`, a: 0 },
+                { q: `Ethical concerns are never relevant to ${topic}.`, a: 1 },
+                { q: `${topic} requires continuous monitoring in production.`, a: 0 },
+                { q: `${topic} cannot be measured quantitatively.`, a: 1 },
+                { q: `Data quality impacts outcomes in ${topic}.`, a: 0 },
+                { q: `Teams working with ${topic} should never document assumptions.`, a: 1 }
+            ];
+            return items.map((it) => ({
+                question: it.q,
+                options: ['True', 'False'],
+                correctAnswer: it.a,
+                explanation: `Contextual statement about ${topic}.`
+            }));
+        };
+
+        const tfDynamicPool = buildTrueFalsePool(formData.topic);
+
         const questionTemplates = {
             'multiple-choice': [
                 {
@@ -127,41 +163,66 @@ class AIQuizGenerator {
                     ],
                     correctAnswer: 1,
                     explanation: `This definition accurately captures the essence of ${formData.topic}.`
-                }
+                },
+                { question: `Which is NOT related to ${formData.topic}?`, options: [`Irrelevant X`, `Relevant Y`, `Relevant Z`, `Relevant W`], correctAnswer: 0, explanation: `Option X is not related.`},
+                { question: `Choose the correct usage of ${formData.topic}`, options: [`Usage 1`, `Usage 2`, `Usage 3`, `Usage 4`], correctAnswer: 2, explanation: `Usage 3 is most accurate.`},
+                { question: `What is an advantage of ${formData.topic}?`, options: [`Performance`, `Complexity`, `Overhead`, `Ambiguity`], correctAnswer: 0, explanation: `Improves performance in many cases.`},
+                { question: `Which component is essential in ${formData.topic}?`, options: [`Component A`, `Component B`, `Component C`, `Component D`], correctAnswer: 1, explanation: `Component B is core.`},
+                { question: `Select the correct term in ${formData.topic}`, options: [`Term A`, `Term B`, `Term C`, `Term D`], correctAnswer: 3, explanation: `Term D fits the definition.`},
+                { question: `In ${formData.topic}, which step comes first?`, options: [`Plan`, `Evaluate`, `Deploy`, `Monitor`], correctAnswer: 0, explanation: `Planning comes first.`},
+                { question: `Common pitfall in ${formData.topic}?`, options: [`Overfitting`, `Compilation`, `Linking`, `Caching`], correctAnswer: 0, explanation: `Overfitting is common in many topics.`},
+                { question: `Choose the correct formula/concept in ${formData.topic}`, options: [`A`, `B`, `C`, `D`], correctAnswer: 2, explanation: `C is the correct one.`}
             ],
-            'true-false': [
-                {
-                    question: `${formData.topic} is an important topic in modern technology.`,
-                    options: ['True', 'False'],
-                    correctAnswer: 0,
-                    explanation: `Yes, ${formData.topic} plays a crucial role in current technological advancement.`
-                }
-            ],
+            'true-false': tfDynamicPool,
             'open-ended': [
                 {
                     question: `Explain the importance of ${formData.topic} in your own words.`,
                     type: 'open-ended',
                     explanation: `This tests your understanding of ${formData.topic} concepts.`
-                }
+                },
+                { question: `Describe a real-world example of ${formData.topic}.`, type: 'open-ended', explanation: `Provide any relevant scenario.`},
+                { question: `List common challenges faced in ${formData.topic}.`, type: 'open-ended', explanation: `Discuss pitfalls.`},
+                { question: `Compare ${formData.topic} with an alternative approach.`, type: 'open-ended', explanation: `Pros and cons.`},
+                { question: `Outline steps to implement ${formData.topic}.`, type: 'open-ended', explanation: `High-level plan.`},
+                { question: `What metrics would you use to evaluate ${formData.topic}?`, type: 'open-ended', explanation: `Justify your choice.`},
+                { question: `Explain how to avoid common mistakes in ${formData.topic}.`, type: 'open-ended', explanation: `Best practices.`},
+                { question: `When would ${formData.topic} be inappropriate?`, type: 'open-ended', explanation: `Edge cases.`},
+                { question: `How would you scale a system using ${formData.topic}?`, type: 'open-ended', explanation: `Architecture discussion.`},
+                { question: `What future trends impact ${formData.topic}?`, type: 'open-ended', explanation: `Forward-looking.`}
             ]
         };
 
-        const questions = [];
-        const questionsPerType = Math.ceil(formData.questionCount / formData.questionTypes.length);
-
-        formData.questionTypes.forEach(type => {
-            const templates = questionTemplates[type] || questionTemplates['multiple-choice'];
-            
-            for (let i = 0; i < questionsPerType && questions.length < formData.questionCount; i++) {
-                const template = templates[i % templates.length];
-                questions.push({
-                    ...template,
-                    type: type,
-                    id: `q_${questions.length + 1}`,
-                    difficulty: formData.difficulty
-                });
+        // Shuffle helper
+        const shuffle = (arr) => {
+            const a = [...arr];
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
             }
+            return a;
+        };
+        const sampleUnique = (arr, n) => shuffle(arr).slice(0, Math.min(n, arr.length));
+
+        const questions = [];
+        const perTypeTarget = Math.max(1, Math.floor(formData.questionCount / Math.max(1, normalizedTypes.length)));
+
+        normalizedTypes.forEach((type) => {
+            const templates = questionTemplates[type] || questionTemplates['multiple-choice'];
+            const picks = sampleUnique(templates, perTypeTarget);
+            picks.forEach((template) => {
+                questions.push({ ...template, type, id: `q_${questions.length + 1}`, difficulty: formData.difficulty });
+            });
         });
+
+        // Fill remaining slots (if any) from a combined pool without replacement
+        const combinedPool = shuffle([].concat(...normalizedTypes.map(t => (questionTemplates[t] || questionTemplates['multiple-choice']))));
+        let idx = 0;
+        while (questions.length < formData.questionCount && idx < combinedPool.length) {
+            const tIndex = idx % normalizedTypes.length;
+            const type = normalizedTypes[tIndex];
+            questions.push({ ...combinedPool[idx], type, id: `q_${questions.length + 1}`, difficulty: formData.difficulty });
+            idx++;
+        }
 
         return {
             id: `ai_${Date.now()}`,

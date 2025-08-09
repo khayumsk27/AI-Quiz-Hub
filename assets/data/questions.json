@@ -1,0 +1,430 @@
+{
+  "javascript": {
+    "name": "JavaScript",
+    "description": "Test your JavaScript knowledge",
+    "difficulty": "intermediate",
+    "questions": [
+      {
+        "id": "js_001",
+        "question": "What is the difference between 'let' and 'var' in JavaScript?",
+        "type": "multiple-choice",
+        "options": [
+          "let has block scope, var has function scope",
+          "let has function scope, var has block scope",
+          "There is no difference",
+          "let is used for constants, var for variables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'let' has block scope while 'var' has function scope."
+      },
+      {
+        "id": "js_002",
+        "question": "Which method adds an element to the end of an array?",
+        "type": "multiple-choice",
+        "options": ["push()", "pop()", "shift()", "unshift()"],
+        "correctAnswer": 0,
+        "explanation": "The push() method adds elements to the end of an array."
+      },
+      {
+        "id": "js_003",
+        "question": "What is the output of console.log(typeof null)?",
+        "type": "multiple-choice",
+        "options": ["null", "undefined", "object", "number"],
+        "correctAnswer": 2,
+        "explanation": "typeof null returns 'object' - this is a known JavaScript quirk."
+      },
+      {
+        "id": "js_004",
+        "question": "Which of the following is NOT a falsy value in JavaScript?",
+        "type": "multiple-choice",
+        "options": ["0", "''", "null", "[]"],
+        "correctAnswer": 3,
+        "explanation": "An empty array [] is truthy in JavaScript, not falsy."
+      },
+      {
+        "id": "js_005",
+        "question": "What does the 'this' keyword refer to in JavaScript?",
+        "type": "multiple-choice",
+        "options": [
+          "Always refers to the global object",
+          "Refers to the function it's written inside",
+          "Refers to the object that owns the current code",
+          "Refers to the previous object"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'this' refers to the object that owns the current code."
+      }
+    ]
+  },
+  "python": {
+    "name": "Python",
+    "description": "Python programming fundamentals",
+    "difficulty": "beginner",
+    "questions": [
+      {"id": "py_001", "question": "Which keyword is used to define a function in Python?", "type": "multiple-choice", "options": ["function", "def", "func", "define"], "correctAnswer": 1, "explanation": "The 'def' keyword is used to define functions in Python."},
+      {"id": "py_002", "question": "What is the correct way to create a list in Python?", "type": "multiple-choice", "options": ["list = []", "list = ()", "list = {}", "list = <<>>"], "correctAnswer": 0, "explanation": "Lists in Python are created using square brackets []."},
+      {"id": "py_003", "question": "Which method is used to add an element to a list?", "type": "multiple-choice", "options": ["add()", "append()", "insert()", "push()"], "correctAnswer": 1, "explanation": "The append() method adds an element to the end of a list."},
+      {"id": "py_004", "question": "What is the output of print(type([]))?", "type": "multiple-choice", "options": ["<class 'list'>", "<class 'array'>", "<class 'tuple'>", "<class 'set'>"], "correctAnswer": 0, "explanation": "type([]) returns <class 'list'> for an empty list."},
+      {"id": "py_005", "question": "How do you comment a line in Python?", "type": "multiple-choice", "options": ["//", "/*", "#", "<!--"], "correctAnswer": 2, "explanation": "Python uses # for single-line comments."},
+      {"id": "py_006", "question": "True/False: Python is statically typed.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "Python is dynamically typed."},
+      {"id": "py_007", "question": "What built-in function returns the length of a list?", "type": "short-answer", "correctAnswer": "len", "explanation": "Use len(obj) to get length."},
+      {"id": "py_008", "question": "Which keyword is used for exception handling?", "type": "multiple-choice", "options": ["except", "catch", "error", "handle"], "correctAnswer": 0, "explanation": "try/except handles exceptions."},
+      {"id": "py_009", "question": "True/False: Dictionaries preserve insertion order in Python 3.7+.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Yes, insertion order is preserved."},
+      {"id": "py_010", "question": "Fill in the blank: ______ is used to create an anonymous function.", "type": "short-answer", "correctAnswer": "lambda", "explanation": "lambda defines an anonymous function."},
+      {"id": "py_011", "question": "Which of these creates a set?", "type": "multiple-choice", "options": ["{}", "set()", "[]", "()"], "correctAnswer": 1, "explanation": "set() creates an empty set; {} is a dict."},
+      {"id": "py_012", "question": "True/False: 'is' compares values for equality.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "'is' compares identity; '==' compares value."},
+      {"id": "py_013", "question": "Which method adds a key-value pair to a dictionary?", "type": "short-answer", "correctAnswer": "update", "explanation": "dict.update or assignment adds pairs."},
+      {"id": "py_014", "question": "Which module do you import for regular expressions?", "type": "short-answer", "correctAnswer": "re", "explanation": "The 're' module handles regex."},
+      {"id": "py_015", "question": "List comprehension result = [x*x for x in range(3)] returns?", "type": "multiple-choice", "options": ["[1,4,9]", "[0,1,4]", "[0,1,2]", "[2,4,6]"], "correctAnswer": 1, "explanation": "Squares of 0,1,2 => [0,1,4]."},
+      {"id": "py_016", "question": "True/False: Tuples are mutable.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "Tuples are immutable."},
+      {"id": "py_017", "question": "What keyword defines a class?", "type": "short-answer", "correctAnswer": "class", "explanation": "Use 'class' to define classes."},
+      {"id": "py_018", "question": "Which builtin converts a string to an integer?", "type": "short-answer", "correctAnswer": "int", "explanation": "int('123') -> 123."},
+      {"id": "py_019", "question": "True/False: range(3) produces 1,2,3.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "It produces 0,1,2."},
+      {"id": "py_020", "question": "What is the Python package manager called?", "type": "short-answer", "correctAnswer": "pip", "explanation": "pip installs packages."}
+    ]
+  },
+  "react": {
+    "name": "React",
+    "description": "React framework and concepts",
+    "difficulty": "intermediate",
+    "questions": [
+      {
+        "id": "react_001",
+        "question": "What is a React component?",
+        "type": "multiple-choice",
+        "options": [
+          "A JavaScript function that returns HTML",
+          "A CSS class for styling",
+          "A database table",
+          "A server-side script"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A React component is a JavaScript function that returns HTML."
+      },
+      {
+        "id": "react_002",
+        "question": "What hook is used to manage state in functional components?",
+        "type": "multiple-choice",
+        "options": ["useState", "useEffect", "useContext", "useReducer"],
+        "correctAnswer": 0,
+        "explanation": "useState is the hook used to manage state in functional components."
+      },
+      {
+        "id": "react_003",
+        "question": "What is JSX?",
+        "type": "multiple-choice",
+        "options": [
+          "A JavaScript library",
+          "A syntax extension for JavaScript",
+          "A CSS framework",
+          "A database query language"
+        ],
+        "correctAnswer": 1,
+        "explanation": "JSX is a syntax extension for JavaScript that allows you to write HTML-like code."
+      },
+      {
+        "id": "react_004",
+        "question": "What is the purpose of the key prop in React lists?",
+        "type": "multiple-choice",
+        "options": [
+          "To style the list items",
+          "To help React identify which items have changed",
+          "To make the list items clickable",
+          "To sort the list items"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The key prop helps React identify which items have changed, been added, or been removed."
+      },
+      {
+        "id": "react_005",
+        "question": "What is the virtual DOM?",
+        "type": "multiple-choice",
+        "options": [
+          "A real DOM element",
+          "A lightweight copy of the real DOM",
+          "A CSS framework",
+          "A JavaScript library"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The virtual DOM is a lightweight copy of the real DOM that React uses for performance optimization."
+      }
+    ]
+  },
+  "html-css": {
+    "name": "HTML & CSS",
+    "description": "Web fundamentals and styling",
+    "difficulty": "beginner",
+    "questions": [
+      {
+        "id": "html_001",
+        "question": "What does HTML stand for?",
+        "type": "multiple-choice",
+        "options": [
+          "Hyper Text Markup Language",
+          "High Tech Modern Language",
+          "Home Tool Markup Language",
+          "Hyperlink and Text Markup Language"
+        ],
+        "correctAnswer": 0,
+        "explanation": "HTML stands for Hyper Text Markup Language."
+      },
+      {
+        "id": "html_002",
+        "question": "Which HTML element is used to define a paragraph?",
+        "type": "multiple-choice",
+        "options": ["<p>", "<paragraph>", "<text>", "<para>"],
+        "correctAnswer": 0,
+        "explanation": "The <p> element is used to define a paragraph in HTML."
+      },
+      {
+        "id": "css_001",
+        "question": "What does CSS stand for?",
+        "type": "multiple-choice",
+        "options": [
+          "Cascading Style Sheets",
+          "Computer Style Sheets",
+          "Creative Style Sheets",
+          "Colorful Style Sheets"
+        ],
+        "correctAnswer": 0,
+        "explanation": "CSS stands for Cascading Style Sheets."
+      },
+      {
+        "id": "css_002",
+        "question": "Which CSS property controls the text size?",
+        "type": "multiple-choice",
+        "options": ["font-size", "text-size", "size", "font-style"],
+        "correctAnswer": 0,
+        "explanation": "The font-size property controls the text size in CSS."
+      },
+      {
+        "id": "css_003",
+        "question": "How do you select an element with id 'demo' in CSS?",
+        "type": "multiple-choice",
+        "options": [".demo", "#demo", "demo", "*demo"],
+        "correctAnswer": 1,
+        "explanation": "You use #demo to select an element with id 'demo' in CSS."
+      }
+    ]
+  },
+  "nodejs": {
+    "name": "Node.js",
+    "description": "Server-side JavaScript",
+    "difficulty": "advanced",
+    "questions": [
+      {
+        "id": "node_001",
+        "question": "What is Node.js?",
+        "type": "multiple-choice",
+        "options": [
+          "A JavaScript runtime environment",
+          "A database management system",
+          "A web browser",
+          "A programming language"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Node.js is a JavaScript runtime environment that allows you to run JavaScript on the server side."
+      },
+      {
+        "id": "node_002",
+        "question": "What is the purpose of package.json?",
+        "type": "multiple-choice",
+        "options": [
+          "To store CSS styles",
+          "To manage project dependencies and metadata",
+          "To store HTML templates",
+          "To manage database connections"
+        ],
+        "correctAnswer": 1,
+        "explanation": "package.json is used to manage project dependencies and metadata in Node.js projects."
+      },
+      {
+        "id": "node_003",
+        "question": "What is npm?",
+        "type": "multiple-choice",
+        "options": [
+          "Node Package Manager",
+          "Node Program Manager",
+          "Node Project Manager",
+          "Node Process Manager"
+        ],
+        "correctAnswer": 0,
+        "explanation": "npm stands for Node Package Manager."
+      },
+      {
+        "id": "node_004",
+        "question": "What is the purpose of the require() function?",
+        "type": "multiple-choice",
+        "options": [
+          "To create a new file",
+          "To import modules in Node.js",
+          "To delete a file",
+          "To rename a file"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The require() function is used to import modules in Node.js."
+      },
+      {
+        "id": "node_005",
+        "question": "What is the purpose of the __dirname variable?",
+        "type": "multiple-choice",
+        "options": [
+          "To get the current working directory",
+          "To get the directory name of the current module",
+          "To get the file name",
+          "To get the file extension"
+        ],
+        "correctAnswer": 1,
+        "explanation": "__dirname returns the directory name of the current module."
+      }
+    ]
+  },
+  "database": {
+    "name": "Databases",
+    "description": "SQL and database concepts",
+    "difficulty": "intermediate",
+    "questions": [
+      {
+        "id": "db_001",
+        "question": "What does SQL stand for?",
+        "type": "multiple-choice",
+        "options": [
+          "Structured Query Language",
+          "Simple Query Language",
+          "Standard Query Language",
+          "System Query Language"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SQL stands for Structured Query Language."
+      },
+      {
+        "id": "db_002",
+        "question": "Which SQL command is used to retrieve data from a database?",
+        "type": "multiple-choice",
+        "options": ["SELECT", "INSERT", "UPDATE", "DELETE"],
+        "correctAnswer": 0,
+        "explanation": "The SELECT command is used to retrieve data from a database."
+      },
+      {
+        "id": "db_003",
+        "question": "What is a primary key?",
+        "type": "multiple-choice",
+        "options": [
+          "A key that can be null",
+          "A key that uniquely identifies each record",
+          "A key that references another table",
+          "A key that is automatically generated"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A primary key uniquely identifies each record in a table."
+      },
+      {
+        "id": "db_004",
+        "question": "What is normalization?",
+        "type": "multiple-choice",
+        "options": [
+          "A process to make data more complex",
+          "A process to organize data to reduce redundancy",
+          "A process to delete data",
+          "A process to backup data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Normalization is a process to organize data to reduce redundancy and improve data integrity."
+      },
+      {
+        "id": "db_005",
+        "question": "What is a foreign key?",
+        "type": "multiple-choice",
+        "options": [
+          "A key that is always unique",
+          "A key that references a primary key in another table",
+          "A key that is automatically generated",
+          "A key that can be null"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A foreign key references a primary key in another table to establish relationships."
+      }
+    ]
+  },
+  "machine-learning": {
+    "name": "Machine Learning",
+    "description": "ML concepts and terminology",
+    "difficulty": "intermediate",
+    "questions": [
+      {"id": "ml_001", "question": "True/False: Supervised learning uses labeled data.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "By definition, supervised uses labels."},
+      {"id": "ml_002", "question": "Which metric is suitable for classification?", "type": "multiple-choice", "options": ["MSE", "Accuracy", "MAE", "MSE/2"], "correctAnswer": 1, "explanation": "Accuracy measures classification performance."},
+      {"id": "ml_003", "question": "Algorithm to reduce overfitting by halting training early is called?", "type": "short-answer", "correctAnswer": "early stopping", "explanation": "Early stopping prevents overfitting."},
+      {"id": "ml_004", "question": "True/False: L1 regularization encourages sparsity.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "L1 leads to sparse weights."},
+      {"id": "ml_005", "question": "Which of these is a decision tree algorithm?", "type": "multiple-choice", "options": ["KNN", "ID3", "k-means", "PCA"], "correctAnswer": 1, "explanation": "ID3, C4.5 are tree algorithms."},
+      {"id": "ml_006", "question": "Technique to combine weak learners into a strong one?", "type": "short-answer", "correctAnswer": "boosting", "explanation": "Boosting combines weak learners."},
+      {"id": "ml_007", "question": "True/False: k-means clustering requires labeled data.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "It is unsupervised."},
+      {"id": "ml_008", "question": "Which split criterion is used by CART for classification?", "type": "multiple-choice", "options": ["Gini impurity", "Euclidean distance", "Cosine similarity", "R^2"], "correctAnswer": 0, "explanation": "CART usually uses Gini."},
+      {"id": "ml_009", "question": "Dimensionality reduction technique that finds orthogonal components?", "type": "short-answer", "correctAnswer": "PCA", "explanation": "Principal Component Analysis."},
+      {"id": "ml_010", "question": "True/False: Cross-validation helps estimate generalization performance.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Yes, CV estimates performance."},
+      {"id": "ml_011", "question": "Which algorithm is lazy and instance-based?", "type": "multiple-choice", "options": ["Naive Bayes", "SVM", "KNN", "Logistic Regression"], "correctAnswer": 2, "explanation": "KNN is lazy learner."},
+      {"id": "ml_012", "question": "Regularization in linear regression that adds squared weights is called?", "type": "short-answer", "correctAnswer": "Ridge", "explanation": "L2 is Ridge."},
+      {"id": "ml_013", "question": "True/False: Precision is TP/(TP+FP).", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Definition of precision."},
+      {"id": "ml_014", "question": "Which is a kernelized linear classifier?", "type": "multiple-choice", "options": ["Random Forest", "SVM", "KNN", "Naive Bayes"], "correctAnswer": 1, "explanation": "SVM can use kernels."},
+      {"id": "ml_015", "question": "Technique to standardize features to zero mean and unit variance?", "type": "short-answer", "correctAnswer": "z-score normalization", "explanation": "Also called standardization."},
+      {"id": "ml_016", "question": "True/False: AUC stands for Area Under the ROC Curve.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Yes."},
+      {"id": "ml_017", "question": "Which ensemble averages predictions of multiple trees?", "type": "multiple-choice", "options": ["AdaBoost", "Random Forest", "Gradient Boosting", "SVM"], "correctAnswer": 1, "explanation": "Random Forest averages trees."},
+      {"id": "ml_018", "question": "Technique to handle imbalanced data by creating synthetic samples?", "type": "short-answer", "correctAnswer": "SMOTE", "explanation": "Synthetic Minority Over-sampling Technique."},
+      {"id": "ml_019", "question": "True/False: Logistic regression outputs probabilities via the sigmoid function.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Sigmoid maps to [0,1]."},
+      {"id": "ml_020", "question": "Which loss is common for classification?", "type": "multiple-choice", "options": ["Cross-entropy", "MSE", "Huber", "MAE"], "correctAnswer": 0, "explanation": "Cross-entropy is standard for classification."}
+    ]
+  },
+  "ai": {
+    "name": "Artificial Intelligence",
+    "description": "General AI concepts",
+    "difficulty": "intermediate",
+    "questions": [
+      {"id": "ai_001", "question": "True/False: The Turing Test evaluates machine intelligence.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Proposed by Alan Turing."},
+      {"id": "ai_002", "question": "Which is a search strategy?", "type": "multiple-choice", "options": ["A*", "Dropout", "Backpropagation", "Pooling"], "correctAnswer": 0, "explanation": "A* is a best-first search algorithm."},
+      {"id": "ai_003", "question": "Knowledge representation graph of entities and relations?", "type": "short-answer", "correctAnswer": "knowledge graph", "explanation": "Graph of entities/relations."},
+      {"id": "ai_004", "question": "True/False: Heuristics guarantee optimal solutions.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "Heuristics guide search but don't guarantee optimality."},
+      {"id": "ai_005", "question": "Which paradigm uses reward signals?", "type": "multiple-choice", "options": ["Supervised", "Unsupervised", "Reinforcement", "Self-supervised"], "correctAnswer": 2, "explanation": "RL optimizes cumulative reward."},
+      {"id": "ai_006", "question": "Logical rule of inference combining implications?", "type": "short-answer", "correctAnswer": "modus ponens", "explanation": "A fundamental inference rule."},
+      {"id": "ai_007", "question": "True/False: Alpha-Beta pruning reduces nodes evaluated in minimax.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Prunes branches that cannot affect the outcome."},
+      {"id": "ai_008", "question": "Which is a probabilistic graphical model?", "type": "multiple-choice", "options": ["Bayesian network", "KNN", "SVM", "K-means"], "correctAnswer": 0, "explanation": "Directed acyclic graph of variables."},
+      {"id": "ai_009", "question": "Method to convert natural language to vectors?", "type": "short-answer", "correctAnswer": "word embeddings", "explanation": "e.g., word2vec, GloVe."},
+      {"id": "ai_010", "question": "True/False: Constraint satisfaction problems require satisfying all constraints.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Yes."},
+      {"id": "ai_011", "question": "Which algorithm learns decision boundaries via information gain?", "type": "multiple-choice", "options": ["ID3", "KNN", "PCA", "k-means"], "correctAnswer": 0, "explanation": "ID3 uses information gain."},
+      {"id": "ai_012", "question": "Symbolic AI planning algorithm that uses operators and goals?", "type": "short-answer", "correctAnswer": "STRIPS", "explanation": "Stanford Research Institute Problem Solver."},
+      {"id": "ai_013", "question": "True/False: Naive Bayes assumes conditional independence of features.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Core assumption of Naive Bayes."},
+      {"id": "ai_014", "question": "Which is an uninformed search strategy?", "type": "multiple-choice", "options": ["Breadth-first search", "A*", "Hill climbing", "Beam search"], "correctAnswer": 0, "explanation": "BFS is uninformed."},
+      {"id": "ai_015", "question": "Metric that balances precision and recall?", "type": "short-answer", "correctAnswer": "F1-score", "explanation": "Harmonic mean of precision and recall."},
+      {"id": "ai_016", "question": "True/False: Overfitting occurs when test error is much lower than training error.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "Overfitting: good train, poor test."},
+      {"id": "ai_017", "question": "Which is a type of neural network layer?", "type": "multiple-choice", "options": ["Convolutional", "Hashing", "Splaying", "Parsing"], "correctAnswer": 0, "explanation": "CNN layers are convolutional."},
+      {"id": "ai_018", "question": "Optimization algorithm that adapts learning rates per parameter?", "type": "short-answer", "correctAnswer": "Adam", "explanation": "Adaptive Moment Estimation."},
+      {"id": "ai_019", "question": "True/False: Semantic networks and frames are knowledge representations.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "They represent concepts and relations."},
+      {"id": "ai_020", "question": "Which method selects the next variable to assign in CSPs?", "type": "multiple-choice", "options": ["Minimum Remaining Values", "Gradient Descent", "Max Pooling", "Batch Norm"], "correctAnswer": 0, "explanation": "MRV heuristic."}
+    ]
+  },
+  "java": {
+    "name": "Java",
+    "description": "Core Java concepts",
+    "difficulty": "intermediate",
+    "questions": [
+      {"id": "java_001", "question": "True/False: Java supports multiple inheritance with classes.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "Java uses interfaces for multiple inheritance."},
+      {"id": "java_002", "question": "Which keyword creates a subclass?", "type": "multiple-choice", "options": ["extends", "implements", "inherits", "super"], "correctAnswer": 0, "explanation": "Use extends for subclasses."},
+      {"id": "java_003", "question": "Method that gets called to initialize a new object?", "type": "short-answer", "correctAnswer": "constructor", "explanation": "Constructors initialize objects."},
+      {"id": "java_004", "question": "True/False: JVM stands for Java Virtual Machine.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Correct."},
+      {"id": "java_005", "question": "Which access modifier allows visibility only within the same package?", "type": "multiple-choice", "options": ["public", "protected", "private", "default"], "correctAnswer": 3, "explanation": "Default (no modifier) is package-private."},
+      {"id": "java_006", "question": "Keyword to prevent method overriding?", "type": "short-answer", "correctAnswer": "final", "explanation": "final prevents overriding."},
+      {"id": "java_007", "question": "True/False: ArrayList implements List interface.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "ArrayList is a List."},
+      {"id": "java_008", "question": "Which statement handles exceptions?", "type": "multiple-choice", "options": ["try-catch", "if-else", "switch", "for"], "correctAnswer": 0, "explanation": "try-catch handles exceptions."},
+      {"id": "java_009", "question": "Method used to start a Java application?", "type": "short-answer", "correctAnswer": "main", "explanation": "public static void main."},
+      {"id": "java_010", "question": "True/False: Interfaces can contain default methods in Java 8+.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Default methods were added in Java 8."},
+      {"id": "java_011", "question": "Which collection disallows duplicates?", "type": "multiple-choice", "options": ["List", "Queue", "Set", "Map"], "correctAnswer": 2, "explanation": "Set disallows duplicates."},
+      {"id": "java_012", "question": "Keyword to refer to superclass?", "type": "short-answer", "correctAnswer": "super", "explanation": "super refers to superclass."},
+      {"id": "java_013", "question": "True/False: String is immutable in Java.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 0, "explanation": "Strings are immutable."},
+      {"id": "java_014", "question": "Which loop iterates over arrays/collections easily?", "type": "multiple-choice", "options": ["for-each", "do-while", "while", "labeled for"], "correctAnswer": 0, "explanation": "Enhanced for loop."},
+      {"id": "java_015", "question": "Package keyword to declare a package?", "type": "short-answer", "correctAnswer": "package", "explanation": "Use package at top of file."},
+      {"id": "java_016", "question": "True/False: Garbage collector must be invoked manually.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "GC is automatic."},
+      {"id": "java_017", "question": "Which map keeps insertion order?", "type": "multiple-choice", "options": ["HashMap", "TreeMap", "LinkedHashMap", "EnumMap"], "correctAnswer": 2, "explanation": "LinkedHashMap preserves insertion order."},
+      {"id": "java_018", "question": "What keyword creates a new object?", "type": "short-answer", "correctAnswer": "new", "explanation": "Use new to create instances."},
+      {"id": "java_019", "question": "True/False: '==' compares string content in Java.", "type": "true-false", "options": ["True", "False"], "correctAnswer": 1, "explanation": "Use equals() for content."},
+      {"id": "java_020", "question": "Which of these is a checked exception?", "type": "multiple-choice", "options": ["NullPointerException", "IOException", "ArithmeticException", "ArrayIndexOutOfBoundsException"], "correctAnswer": 1, "explanation": "IOException is checked."}
+    ]
+  }
+}

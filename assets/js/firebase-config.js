@@ -161,12 +161,32 @@ function updateUIForAuthenticatedUser(user) {
     const userMenu = document.getElementById('user-menu');
     const userName = document.getElementById('user-name');
     
-    if (authButtons) authButtons.style.display = 'none';
+    if (authButtons) authButtons.classList.add('d-none');
     if (userMenu) {
-        userMenu.style.display = 'block';
+        userMenu.classList.remove('d-none');
         if (userName) {
-            userName.textContent = user.displayName || user.email || 'User';
+            // Get username from various sources
+            let displayName = 'User';
+            
+            // First try to get from localStorage
+            const userData = JSON.parse(localStorage.getItem('quizwise_user_data') || '{}');
+            if (userData.username) {
+                displayName = userData.username;
+            } else if (userData.displayName) {
+                displayName = userData.displayName;
+            } else if (user.displayName) {
+                displayName = user.displayName;
+            } else if (user.email) {
+                displayName = user.email.split('@')[0];
+            }
+            
+            userName.textContent = displayName;
         }
+    }
+    
+    // Update leaderboard to reflect new user
+    if (window.quizApp) {
+        window.quizApp.loadLeaderboard();
     }
 }
 
@@ -174,8 +194,8 @@ function updateUIForUnauthenticatedUser() {
     const authButtons = document.getElementById('auth-buttons');
     const userMenu = document.getElementById('user-menu');
     
-    if (authButtons) authButtons.style.display = 'block';
-    if (userMenu) userMenu.style.display = 'none';
+    if (authButtons) authButtons.classList.remove('d-none');
+    if (userMenu) userMenu.classList.add('d-none');
 }
 
 // Make functions globally available
