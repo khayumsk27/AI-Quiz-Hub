@@ -432,7 +432,7 @@ class QuizWiseApp {
             optionsHtml = `
                 <div class="mb-3">
                     <label class="form-label">Your Answer</label>
-                    <textarea class="form-control" rows="4" placeholder="Type your answer here..." oninput="quizApp.setShortAnswer(${index}, this.value)">${this.escapeHtml(value)}</textarea>
+                    <textarea class="form-control" rows="4" placeholder="Type your answer here..." oninput="setShortAnswer(${index}, this.value)">${this.escapeHtml(value)}</textarea>
                 </div>`;
         }
  
@@ -1446,6 +1446,14 @@ function showUserHistory() {
     }
 }
 window.showUserHistory = showUserHistory;
+
+// Global wrapper to attach short-answer input updates safely
+function setShortAnswer(index, value) {
+    if (window.quizApp && typeof window.quizApp.setShortAnswer === 'function') {
+        window.quizApp.setShortAnswer(index, value);
+    }
+}
+window.setShortAnswer = setShortAnswer;
 
 // Show the latest and aggregate results for the current user
 function showMyResults() {
